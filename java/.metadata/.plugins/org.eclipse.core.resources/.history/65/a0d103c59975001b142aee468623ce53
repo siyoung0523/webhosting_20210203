@@ -1,0 +1,12 @@
+
+public class Circle {
+	double rad;
+	Circle(){}
+	Circle(int r){
+		ra = r;
+	}
+	
+	double getArea(){
+		return ra*ra*3.14;
+	}
+}

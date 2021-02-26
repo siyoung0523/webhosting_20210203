@@ -1,0 +1,16 @@
+import java.util.Scanner;
+
+
+
+public class EMain {
+	public static void main(String[] args) {
+		Employee emp = new Employee();
+//		emp.name = "홍길동";
+		Scanner scan = new Scanner(System.in);
+		System.out.println("이름 입력해라");
+		String name = scan.nextLine();
+		emp.setName("홍길동");
+		
+		
+	}
+}
