@@ -1,0 +1,11 @@
+package cat;
+
+public class Cat {
+	public void makeSound(){ //public
+		System.out.println("야옹");
+	}
+	
+	void makeHappy(){ //dafault
+		System.out.println("스마일");
+	}
+}

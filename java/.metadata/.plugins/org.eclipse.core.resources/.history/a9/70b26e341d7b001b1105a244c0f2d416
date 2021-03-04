@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Main {
+/*
+ * 1.학생등록
+ * 2.학생조회
+ * 3.학생수정
+ * 4.학생삭제
+ * 
+ * 5.학생 파일로 저장*/
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("뭐할래? 1,2,3,4 선택");
+		int select = scan.nextInt();
+		System.out.println("select ="+select);
+	}
+}
