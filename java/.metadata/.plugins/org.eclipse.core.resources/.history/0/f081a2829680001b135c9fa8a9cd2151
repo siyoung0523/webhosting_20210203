@@ -1,0 +1,15 @@
+class Boix{
+	
+}
+
+
+public class Ex08 {
+	
+	public static void main(String[] args) {
+		StringBuilder stb = new StringBuilder();
+		stb.append("34");
+		System.out.println(stb.toString());
+		System.out.println(stb);
+		
+	}
+}
