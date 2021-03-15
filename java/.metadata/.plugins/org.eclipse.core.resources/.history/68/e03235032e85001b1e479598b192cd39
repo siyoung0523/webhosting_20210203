@@ -1,0 +1,22 @@
+class Box{
+	String cont;
+	Box(String cont){
+		this.cont = cont;
+	}
+	public String toString(){
+		return this.cont;
+	}
+}
+public class Ex03 {
+	Ex03(){
+		Box a = new Box("사과");
+		System.out.println(a);
+	
+		Box bana = new Box("바나나");
+		System.out.println(bana);
+	}
+	
+	public static void main(String[] args) {
+		new Ex03();
+	}
+}
