@@ -5,8 +5,7 @@ import oracle.jdbc.*;
 
 public class CallProcedure1 {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public void callProcedure1(){
 		Connection conn = null; // DB연결된 상태(세션)을 담은 객체
         PreparedStatement pstm = null;  // SQL 문을 나타내는 객체
         ResultSet rs = null;  // 쿼리문을 날린것에 대한 반환값을 담을 객체
@@ -56,5 +55,4 @@ public class CallProcedure1 {
 			 e.printStackTrace();
 			 }
 	}
-
 }

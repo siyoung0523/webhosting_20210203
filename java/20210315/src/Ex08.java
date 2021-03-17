@@ -14,7 +14,6 @@ public class Ex08 {
 			System.out.println();
 		}
 	}
-	
 	public static void main(String[] args) {
 		new Ex08();
 	}
