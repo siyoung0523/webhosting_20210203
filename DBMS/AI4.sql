@@ -19,3 +19,21 @@ update atable
 set name ='', gender='', remark=''
 where idx=1;
 commit;
+
+create table EMP_1(
+    empnno number(4,0) primary key,
+    ename varchar2(10 byte),
+    job varchar2(9 byte),
+    mgr number(4,0),
+    hiredate varchar2(20 byte),
+    sal number(7,2),
+    comm number(7,2),
+    deptno number(2,0)
+);
+
+
+
+
+
+
+
