@@ -22,7 +22,7 @@ public class EMPMain {
 		else if(select ==4)
 			se.select();
 		else
-			System.exit(1);
+			System.exit(1);;
 		}
 	}
 

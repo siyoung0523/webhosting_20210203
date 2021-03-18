@@ -32,7 +32,6 @@ public class CallProcedure_delete {
 			 int seq= cs.executeUpdate();
 //			 ResultSet rs = (ResultSet)cs.getObject(1);
 			 
-
 //			 rs.close();
 			 cs.close();
 			 conn.close();
