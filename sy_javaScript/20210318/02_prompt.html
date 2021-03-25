@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        var input1 = (prompt('(1)',''))
+        var input2 = (prompt('(1)',''))
+    
+        var output_3 =input1 * (input2[2]);
+        var output_4 =input1 * (input2[1]);
+        var output_5 =input1 * (input2[0]);
+        var output_6 =input1 * (input2);
+
+        console.log(output_3)
+        console.log(output_4)
+        console.log(output_5)
+        console.log(output_6)
+
+        const a = prompt('곱할 숫자를 입력하세요.','첫번째 값')
+        // alert(a)
+
+        const b = prompt('곱할 숫자를 입력하세요.','두번째 값')
+        // alert(b)
+
+
+        const c = a*(b%10)
+        const d = a*(b%100 - b%10)
+        const e = a*(b-b%100)
+        const f = a*b
+        // const input = prompt('메시지를 입력하세요.','기본값')
+        // alert(input)
+    
+
+        console.log(c)
+        console.log(d)
+        console.log(e)
+        console.log(f)
+
+
+    </script>
+</body>
+</html>

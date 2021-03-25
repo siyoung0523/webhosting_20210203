@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = [1,2,3,4]
+        console.log(array, length)
+        array.push(5) // array 배열 끝에 5가 추가됨
+        console.log("길이"+array.length)
+        console.log("1번째"+array[0])
+        console.log("2번째"+array[1])
+        console.log("3번째"+array[2])
+        console.log("4번째"+array[3])
+        console.log("5번째"+array[4])
+        array[10] ="내가 원하는 위치에 값 바로 넣을 수 있다."
+        console.log(array)
+        array[7]="최시영"
+        console.log(array)
+        array.splice(7,1) // 7번째에 있는 거 1개 제거해라
+        console.log(array)
+        array.splice(0,2) //0번째에 있는 거 2개 제거해라
+        console.log(array)
+
+        //특정값 제거하기 (값으로 제거하기)
+        const index = array.indexOf("내가 원하는 위치에 값 바로 넣을 수 있다")
+        array.splice(index,1)
+        console.log(array)
+
+        //특정 위치에 값 추가하기
+        //1. 위에서 봤던 것처럼 인덱스 적고 바로 값 넣으면 됨
+        //2. splice 이용
+
+        //현재 array에는 3,4,5만 들어가 있는데,
+        //3과 4사이에 값을 넣고 싶을 때
+        array.splice(1,0,"3.5")//1번째에 "3.5"를 추가함
+        console.log(array)
+
+    </script>
+</body>
+</html>

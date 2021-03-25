@@ -1,0 +1,36 @@
+
+interface Printable{
+	public void print(String doc);
+}
+
+class SPrinter implements Printable{
+	@Override
+	public void print(String doc){
+		System.out.println("samsung Printer...");
+		System.out.println(doc);
+	}
+}
+
+class LPrinter implements Printable{
+	public void print(String doc){
+		System.out.println("LG Printer...");
+		System.out.println(doc);	
+	}
+}
+
+public class MainPrinter {
+	public static void main(String[] args) {
+		SPrinter sp = new SPrinter();
+		sp.print("this is report,,,");
+		System.out.println();
+		LPrinter lp = new LPrinter();
+		lp.print("this is report,,,");
+		
+		System.out.println();
+		Printable ap = (doc)->{
+			System.out.println("만들면서 정의 되는 함수");
+			System.out.println("doc="+doc);
+		};
+		ap.print("this is report...");
+	}
+}

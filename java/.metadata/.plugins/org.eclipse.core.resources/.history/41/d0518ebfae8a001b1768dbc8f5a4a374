@@ -1,0 +1,14 @@
+class A extends Object{ //Object class는 생략되어있음. Object는 최상위 클래스임.
+	
+}
+
+class B{
+	
+}
+
+public class Ex02 {
+	public static void main(String[] args) {
+		A a = new A();
+		System.out.println(a);
+	}
+}

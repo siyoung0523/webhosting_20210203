@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // alert("안녕하세요");
+        // alert("안녕하세요");
+        // alert("안녕하세요");
+        // console.log("안녕하세요");
+        // document.body.innerHTML ="<h1>안녕하세요</h1>"
+        // document.body.innerHTML= "<br>"
+        // document.body.innerHTML= "<그냥 적어도 됨>"
+
+        alert("안녕 내 이름은 '최시영'이야")
+        alert("안녕 내 이름은 \"최시영\"이야")
+        alert('안녕 내 이름은 "최시영"이야')
+    </script>
+</head>
+<body>
+    
+    <script>
+        document.body.innerHTML ="<h1>안녕하세요</h1>"
+        document.body.innerHTML += "<br>"
+        document.body.innerHTML += "다행이다"
+        console.log("세미콜론 없어도 되긴 함")
+        console.log("진짜"); console.log("근데 한 줄 안에서 문장 구분 시 써야함.")
+
+
+        var kim = "var는 중복 선엄 됨"
+        var kim =" var는 중복 선언 됨2"
+        console.log(kim) // 그래서 변수를 중복 선언하면 디버깅이 힘듦
+
+        // let lee =""깐깐"
+        let lee ="깐깐2"
+        console.log(lee) // 변수 중복 선언 시 프로그램 실행을 시키지 않음
+        document.body.innerHTML += (kim+lee)
+        
+    
+    </script>
+</body>
+</html>
