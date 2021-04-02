@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id ="one" type="text"> +
+    <input id ="two" type="text"> =
+    <span id="result">결과가 여기 나옴</span>
+    <div>
+        <input value="+" type="button" onclick="calcc('+')">
+        <input value="-" type="button" onclick="calcc('-')">
+        <input value="x" type="button" onclick="calcc('*')">
+        <input value="/" type="button" onclick="calcc('/')">
+    </div>
+    <script>
+        function calcc(num)
+        { 
+            let one = document.getElementById('one').value
+            let two = document.getElementById('two').value
+            let result =''
+            switch(num)
+            {
+                case '+':
+                    result = Number(one) + Number(two)
+                    break
+                case '-':
+                    result = Number(one) - Number(two)
+                    break
+                case '*':
+                    result = Number(one) * Number(two)    
+                    break
+                case '/':
+                    result = Number(one) / Number(two)
+                    break
+                default:
+                    alert("!?")
+                    result="!?"
+                    break
+            }
+            alert(result)
+            document.getElementById('result').innerText
+            =result
+        }
+        </script>
+</body>
+</html>

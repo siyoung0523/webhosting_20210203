@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id ="one" type="text">
+    <div>
+        <input value="+" type="button" onclick="sum()">
+        <input value="-" type="button" onclick="mi()">
+        <input value="x" type="button" onclick="mul()">
+        <input value="/" type="button" onclick="div()">
+    </div>
+    <input id ="two" type="text"> =
+    <span id="result">결과가 여기 나옴</span>
+    
+    <script>
+        function sum()
+        { 
+            let one = document.getElementById('one').value
+            let two = document.getElementById('two').value
+            let sum = Number(one)+Number(two)
+            alert(sum)
+            document.getElementById('result').innerText
+            =sum
+        }
+        function mi()
+        { 
+            let one = document.getElementById('one').value
+            let two = document.getElementById('two').value
+            let mi = Number(one)-Number(two)
+            alert(mi)
+            document.getElementById('result').innerText
+            =mi
+        }        
+        function mul()
+        { 
+            let one = document.getElementById('one').value
+            let two = document.getElementById('two').value
+            let mul = Number(one)*Number(two)
+            alert(mul)
+            document.getElementById('result').innerText
+            =mul
+        }        
+        function div()
+        { 
+            let one = document.getElementById('one').value
+            let two = document.getElementById('two').value
+            let div = Number(one)/Number(two)
+            alert(div)
+            document.getElementById('result').innerText
+            =div
+        }
+    </script>
+</body>
+</html>
