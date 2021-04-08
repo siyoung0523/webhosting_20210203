@@ -1,0 +1,7 @@
+C:\Users\KB\Desktop\webhosting_20210203\c#work\ClasssTest1\ClasssTest1\bin\Debug\ClasssTest1.exe.config
+C:\Users\KB\Desktop\webhosting_20210203\c#work\ClasssTest1\ClasssTest1\bin\Debug\ClasssTest1.exe
+C:\Users\KB\Desktop\webhosting_20210203\c#work\ClasssTest1\ClasssTest1\bin\Debug\ClasssTest1.pdb
+C:\Users\KB\Desktop\webhosting_20210203\c#work\ClasssTest1\ClasssTest1\obj\Debug\ClasssTest1.csprojAssemblyReference.cache
+C:\Users\KB\Desktop\webhosting_20210203\c#work\ClasssTest1\ClasssTest1\obj\Debug\ClasssTest1.csproj.CoreCompileInputs.cache
+C:\Users\KB\Desktop\webhosting_20210203\c#work\ClasssTest1\ClasssTest1\obj\Debug\ClasssTest1.exe
+C:\Users\KB\Desktop\webhosting_20210203\c#work\ClasssTest1\ClasssTest1\obj\Debug\ClasssTest1.pdb
