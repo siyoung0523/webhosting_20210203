@@ -1,0 +1,7 @@
+C:\Users\KB\Desktop\webhosting_20210203\c#work\Test0407\Test0407\bin\Debug\Test0407.exe.config
+C:\Users\KB\Desktop\webhosting_20210203\c#work\Test0407\Test0407\bin\Debug\Test0407.exe
+C:\Users\KB\Desktop\webhosting_20210203\c#work\Test0407\Test0407\bin\Debug\Test0407.pdb
+C:\Users\KB\Desktop\webhosting_20210203\c#work\Test0407\Test0407\obj\Debug\Test0407.csprojAssemblyReference.cache
+C:\Users\KB\Desktop\webhosting_20210203\c#work\Test0407\Test0407\obj\Debug\Test0407.csproj.CoreCompileInputs.cache
+C:\Users\KB\Desktop\webhosting_20210203\c#work\Test0407\Test0407\obj\Debug\Test0407.exe
+C:\Users\KB\Desktop\webhosting_20210203\c#work\Test0407\Test0407\obj\Debug\Test0407.pdb

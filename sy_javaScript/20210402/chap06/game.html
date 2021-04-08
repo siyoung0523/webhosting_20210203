@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="scissors" onclick="start('가위')">가위</button>
+    <button id="rock" onclick="start('바위')">바위</button>
+    <button id="papper" onclick="start('보')">보</button>
+
+    <div></div><!-- 줄 구분하기 위한 태그 -->
+    
+    나  <img id ="mine">
+    컴퓨터 <img id = "computer">
+    <h1 id="result">결과</h1>
+
+    <script>
+        function start(mine)
+        {
+            console.log("나:"+mine)
+            const RockScissorsPaper = ['가위','바위','보']
+            const computer = RockScissorsPaper[Math.floor(Math.random()*3)]
+            console.log("컴퓨터:"+computer)
+            let myresult = document.getElementById('mine')//img
+            let computerResult = document.getElementById('computer')//img
+            let result = document.getElementById('result')//h1
+            
+        
+            switch(mine)
+            {
+                case '가위':
+                myresult.src='scissors.png'
+                    switch(computer)
+                    {
+                        case '가위':
+                            console.log('비김')
+                            computerResult.src = 'scissors.png'
+                            result.innerText='비김'
+                            break
+                        
+                        case '바위':
+                            console.log('짐')
+                            computerResult.src = 'rock.png'
+                            result.innerText='짐'
+                            break
+                        
+                        case '보':
+                            console.log('이김')    
+                            computerResult.src = 'papper.png'
+                            result.innerText='이김'
+                            break
+                    }
+                    break
+                
+                case '바위':
+                myresult.src='rock.png'
+                    switch(computer)
+                    {
+                        case '가위':
+                        computerResult.src = 'scissors.png'
+                            console.log('이김')
+                            result.innerText='이김'
+                            break
+                    
+                        case '바위':
+                        computerResult.src = 'rock.png'
+                            console.log('비김')
+                            result.innerText='비김'
+                            break
+                    
+                        case '보':
+                        computerResult.src = 'papper.png'
+                            console.log('짐')
+                            result.innerText='짐'
+                            break
+                    }
+                    break
+
+                case '보':
+                myresult.src='papper.png'
+                    switch(computer)
+                    {
+                        case '가위':
+                        computerResult.src = 'scissors.png'
+                            console.log('짐')
+                            result.innerText='짐'
+                            break
+                    
+                        case '바위':
+                        computerResult.src = 'rock.png'
+                            console.log('이김')
+                            result.innerText='이김'
+                            break
+                    
+                        case '보':
+                        computerResult.src = 'papper.png'
+                            console.log('비김')
+                            result.innerText='비김'
+                            break
+                    }
+                    break
+            }
+
+        }
+    </script>
+
+</body>
+</html>
