@@ -1,0 +1,7 @@
+C:\Users\KB\source\repos\ClassTest_2\ClassTest_2\bin\Debug\ClassTest_2.exe.config
+C:\Users\KB\source\repos\ClassTest_2\ClassTest_2\bin\Debug\ClassTest_2.exe
+C:\Users\KB\source\repos\ClassTest_2\ClassTest_2\bin\Debug\ClassTest_2.pdb
+C:\Users\KB\source\repos\ClassTest_2\ClassTest_2\obj\Debug\ClassTest_2.csprojAssemblyReference.cache
+C:\Users\KB\source\repos\ClassTest_2\ClassTest_2\obj\Debug\ClassTest_2.csproj.CoreCompileInputs.cache
+C:\Users\KB\source\repos\ClassTest_2\ClassTest_2\obj\Debug\ClassTest_2.exe
+C:\Users\KB\source\repos\ClassTest_2\ClassTest_2\obj\Debug\ClassTest_2.pdb
