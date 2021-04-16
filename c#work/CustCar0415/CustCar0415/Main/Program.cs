@@ -17,7 +17,7 @@ namespace CustCar0415_2
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainWin());
+            Application.Run(new MainWin()); // new MainWin() 사용자가 보는 최초의 화면
         }
     }
 }

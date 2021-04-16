@@ -33,12 +33,13 @@ namespace CustCar0415
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainExit = new Sunny.UI.UISymbolButton();
             this.help = new Sunny.UI.UISymbolButton();
-            this.CreateData = new CxFlatUI.CxFlatRoundButton();
-            this.cxFlatRoundButton3 = new CxFlatUI.CxFlatRoundButton();
-            this.cxFlatRoundButton4 = new CxFlatUI.CxFlatRoundButton();
-            this.cxFlatRoundButton5 = new CxFlatUI.CxFlatRoundButton();
-            this.cxFlatRoundButton6 = new CxFlatUI.CxFlatRoundButton();
-            this.cxFlatRoundButton7 = new CxFlatUI.CxFlatRoundButton();
+            this.randInsert = new CxFlatUI.CxFlatRoundButton();
+            this.dataDel = new CxFlatUI.CxFlatRoundButton();
+            this.dataUpdate = new CxFlatUI.CxFlatRoundButton();
+            this.dataInsert = new CxFlatUI.CxFlatRoundButton();
+            this.dataView = new CxFlatUI.CxFlatRoundButton();
+            this.randDel = new CxFlatUI.CxFlatRoundButton();
+            this.mainTitle = new Sunny.UI.UISymbolLabel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -89,95 +90,114 @@ namespace CustCar0415
             this.help.TabIndex = 8;
             this.help.Click += new System.EventHandler(this.help_Click);
             // 
-            // CreateData
+            // randInsert
             // 
-            this.CreateData.BackColor = System.Drawing.Color.Transparent;
-            this.CreateData.ButtonType = CxFlatUI.ButtonType.Primary;
-            this.CreateData.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.CreateData.Location = new System.Drawing.Point(429, 97);
-            this.CreateData.Name = "CreateData";
-            this.CreateData.Size = new System.Drawing.Size(250, 46);
-            this.CreateData.TabIndex = 9;
-            this.CreateData.Text = "차량 랜덤데이터 생성";
-            this.CreateData.TextColor = System.Drawing.Color.Transparent;
+            this.randInsert.BackColor = System.Drawing.Color.Transparent;
+            this.randInsert.ButtonType = CxFlatUI.ButtonType.Primary;
+            this.randInsert.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.randInsert.Location = new System.Drawing.Point(429, 97);
+            this.randInsert.Name = "randInsert";
+            this.randInsert.Size = new System.Drawing.Size(250, 46);
+            this.randInsert.TabIndex = 9;
+            this.randInsert.Text = "랜덤데이터 추가";
+            this.randInsert.TextColor = System.Drawing.Color.Transparent;
+            this.randInsert.Click += new System.EventHandler(this.randInsert_Click);
             // 
-            // cxFlatRoundButton3
+            // dataDel
             // 
-            this.cxFlatRoundButton3.BackColor = System.Drawing.Color.Transparent;
-            this.cxFlatRoundButton3.ButtonType = CxFlatUI.ButtonType.Primary;
-            this.cxFlatRoundButton3.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cxFlatRoundButton3.Location = new System.Drawing.Point(429, 357);
-            this.cxFlatRoundButton3.Name = "cxFlatRoundButton3";
-            this.cxFlatRoundButton3.Size = new System.Drawing.Size(250, 46);
-            this.cxFlatRoundButton3.TabIndex = 11;
-            this.cxFlatRoundButton3.Text = "cxFlatRoundButton3";
-            this.cxFlatRoundButton3.TextColor = System.Drawing.Color.Transparent;
+            this.dataDel.BackColor = System.Drawing.Color.Transparent;
+            this.dataDel.ButtonType = CxFlatUI.ButtonType.Primary;
+            this.dataDel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dataDel.Location = new System.Drawing.Point(429, 357);
+            this.dataDel.Name = "dataDel";
+            this.dataDel.Size = new System.Drawing.Size(250, 46);
+            this.dataDel.TabIndex = 11;
+            this.dataDel.Text = "데이터 삭제";
+            this.dataDel.TextColor = System.Drawing.Color.Transparent;
             // 
-            // cxFlatRoundButton4
+            // dataUpdate
             // 
-            this.cxFlatRoundButton4.BackColor = System.Drawing.Color.Transparent;
-            this.cxFlatRoundButton4.ButtonType = CxFlatUI.ButtonType.Primary;
-            this.cxFlatRoundButton4.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cxFlatRoundButton4.Location = new System.Drawing.Point(486, 305);
-            this.cxFlatRoundButton4.Name = "cxFlatRoundButton4";
-            this.cxFlatRoundButton4.Size = new System.Drawing.Size(250, 46);
-            this.cxFlatRoundButton4.TabIndex = 12;
-            this.cxFlatRoundButton4.Text = "cxFlatRoundButton4";
-            this.cxFlatRoundButton4.TextColor = System.Drawing.Color.Transparent;
+            this.dataUpdate.BackColor = System.Drawing.Color.Transparent;
+            this.dataUpdate.ButtonType = CxFlatUI.ButtonType.Primary;
+            this.dataUpdate.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dataUpdate.Location = new System.Drawing.Point(486, 305);
+            this.dataUpdate.Name = "dataUpdate";
+            this.dataUpdate.Size = new System.Drawing.Size(250, 46);
+            this.dataUpdate.TabIndex = 12;
+            this.dataUpdate.Text = "데이터 수정";
+            this.dataUpdate.TextColor = System.Drawing.Color.Transparent;
             // 
-            // cxFlatRoundButton5
+            // dataInsert
             // 
-            this.cxFlatRoundButton5.BackColor = System.Drawing.Color.Transparent;
-            this.cxFlatRoundButton5.ButtonType = CxFlatUI.ButtonType.Primary;
-            this.cxFlatRoundButton5.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cxFlatRoundButton5.Location = new System.Drawing.Point(537, 253);
-            this.cxFlatRoundButton5.Name = "cxFlatRoundButton5";
-            this.cxFlatRoundButton5.Size = new System.Drawing.Size(250, 46);
-            this.cxFlatRoundButton5.TabIndex = 13;
-            this.cxFlatRoundButton5.Text = "cxFlatRoundButton5";
-            this.cxFlatRoundButton5.TextColor = System.Drawing.Color.Transparent;
+            this.dataInsert.BackColor = System.Drawing.Color.Transparent;
+            this.dataInsert.ButtonType = CxFlatUI.ButtonType.Primary;
+            this.dataInsert.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dataInsert.Location = new System.Drawing.Point(537, 253);
+            this.dataInsert.Name = "dataInsert";
+            this.dataInsert.Size = new System.Drawing.Size(250, 46);
+            this.dataInsert.TabIndex = 13;
+            this.dataInsert.Text = "데이터 추가";
+            this.dataInsert.TextColor = System.Drawing.Color.Transparent;
             // 
-            // cxFlatRoundButton6
+            // dataView
             // 
-            this.cxFlatRoundButton6.BackColor = System.Drawing.Color.Transparent;
-            this.cxFlatRoundButton6.ButtonType = CxFlatUI.ButtonType.Primary;
-            this.cxFlatRoundButton6.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cxFlatRoundButton6.Location = new System.Drawing.Point(537, 201);
-            this.cxFlatRoundButton6.Name = "cxFlatRoundButton6";
-            this.cxFlatRoundButton6.Size = new System.Drawing.Size(250, 46);
-            this.cxFlatRoundButton6.TabIndex = 14;
-            this.cxFlatRoundButton6.Text = "cxFlatRoundButton6";
-            this.cxFlatRoundButton6.TextColor = System.Drawing.Color.Transparent;
+            this.dataView.BackColor = System.Drawing.Color.Transparent;
+            this.dataView.ButtonType = CxFlatUI.ButtonType.Primary;
+            this.dataView.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.dataView.Location = new System.Drawing.Point(537, 201);
+            this.dataView.Name = "dataView";
+            this.dataView.Size = new System.Drawing.Size(250, 46);
+            this.dataView.TabIndex = 14;
+            this.dataView.Text = "데이터 보기";
+            this.dataView.TextColor = System.Drawing.Color.Transparent;
+            this.dataView.Click += new System.EventHandler(this.dataView_Click);
             // 
-            // cxFlatRoundButton7
+            // randDel
             // 
-            this.cxFlatRoundButton7.BackColor = System.Drawing.Color.Transparent;
-            this.cxFlatRoundButton7.ButtonType = CxFlatUI.ButtonType.Primary;
-            this.cxFlatRoundButton7.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.cxFlatRoundButton7.Location = new System.Drawing.Point(486, 149);
-            this.cxFlatRoundButton7.Name = "cxFlatRoundButton7";
-            this.cxFlatRoundButton7.Size = new System.Drawing.Size(250, 46);
-            this.cxFlatRoundButton7.TabIndex = 15;
-            this.cxFlatRoundButton7.Text = "cxFlatRoundButton7";
-            this.cxFlatRoundButton7.TextColor = System.Drawing.Color.Transparent;
+            this.randDel.BackColor = System.Drawing.Color.Transparent;
+            this.randDel.ButtonType = CxFlatUI.ButtonType.Primary;
+            this.randDel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.randDel.Location = new System.Drawing.Point(486, 149);
+            this.randDel.Name = "randDel";
+            this.randDel.Size = new System.Drawing.Size(250, 46);
+            this.randDel.TabIndex = 15;
+            this.randDel.Text = "랜덤 데이터 삭제";
+            this.randDel.TextColor = System.Drawing.Color.Transparent;
+            this.randDel.Click += new System.EventHandler(this.randDel_Click);
+            // 
+            // mainTitle
+            // 
+            this.mainTitle.BackColor = System.Drawing.Color.Transparent;
+            this.mainTitle.Font = new System.Drawing.Font("Microsoft YaHei", 12F);
+            this.mainTitle.ForeColor = System.Drawing.Color.LightGray;
+            this.mainTitle.Location = new System.Drawing.Point(12, 15);
+            this.mainTitle.MinimumSize = new System.Drawing.Size(1, 1);
+            this.mainTitle.Name = "mainTitle";
+            this.mainTitle.Padding = new System.Windows.Forms.Padding(28, 0, 0, 0);
+            this.mainTitle.Size = new System.Drawing.Size(166, 46);
+            this.mainTitle.Style = Sunny.UI.UIStyle.Custom;
+            this.mainTitle.Symbol = 61447;
+            this.mainTitle.SymbolColor = System.Drawing.Color.SeaShell;
+            this.mainTitle.TabIndex = 10;
+            this.mainTitle.Text = "고객차량관리앱 v1.1";
             // 
             // MainWin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cxFlatRoundButton7);
-            this.Controls.Add(this.cxFlatRoundButton6);
-            this.Controls.Add(this.cxFlatRoundButton5);
-            this.Controls.Add(this.cxFlatRoundButton4);
-            this.Controls.Add(this.cxFlatRoundButton3);
-            this.Controls.Add(this.CreateData);
+            this.Controls.Add(this.mainTitle);
+            this.Controls.Add(this.randDel);
+            this.Controls.Add(this.dataView);
+            this.Controls.Add(this.dataInsert);
+            this.Controls.Add(this.dataUpdate);
+            this.Controls.Add(this.dataDel);
+            this.Controls.Add(this.randInsert);
             this.Controls.Add(this.help);
             this.Controls.Add(this.mainExit);
             this.Controls.Add(this.pictureBox1);
             this.Name = "MainWin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "고객차량관리앱 1.0v";
+            this.Load += new System.EventHandler(this.MainWin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -188,12 +208,13 @@ namespace CustCar0415
         private System.Windows.Forms.PictureBox pictureBox1;
         private Sunny.UI.UISymbolButton mainExit;
         private Sunny.UI.UISymbolButton help;
-        private CxFlatUI.CxFlatRoundButton CreateData;
-        private CxFlatUI.CxFlatRoundButton cxFlatRoundButton3;
-        private CxFlatUI.CxFlatRoundButton cxFlatRoundButton4;
-        private CxFlatUI.CxFlatRoundButton cxFlatRoundButton5;
-        private CxFlatUI.CxFlatRoundButton cxFlatRoundButton6;
-        private CxFlatUI.CxFlatRoundButton cxFlatRoundButton7;
+        private CxFlatUI.CxFlatRoundButton randInsert;
+        private CxFlatUI.CxFlatRoundButton dataDel;
+        private CxFlatUI.CxFlatRoundButton dataUpdate;
+        private CxFlatUI.CxFlatRoundButton dataInsert;
+        private CxFlatUI.CxFlatRoundButton dataView;
+        private CxFlatUI.CxFlatRoundButton randDel;
+        private Sunny.UI.UISymbolLabel mainTitle;
     }
 }
 

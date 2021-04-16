@@ -12,3 +12,5 @@ C:\Users\KB\Desktop\webhosting_20210203\c#work\CustCar0415\CustCar0415\obj\Debug
 C:\Users\KB\Desktop\webhosting_20210203\c#work\CustCar0415\CustCar0415\obj\Debug\CustCar0415.csproj.CopyComplete
 C:\Users\KB\Desktop\webhosting_20210203\c#work\CustCar0415\CustCar0415\obj\Debug\CustCar0415.exe
 C:\Users\KB\Desktop\webhosting_20210203\c#work\CustCar0415\CustCar0415\obj\Debug\CustCar0415.pdb
+C:\Users\KB\Desktop\webhosting_20210203\c#work\CustCar0415\CustCar0415\obj\Debug\CustCar0415.csprojAssemblyReference.cache
+C:\Users\KB\Desktop\webhosting_20210203\c#work\CustCar0415\CustCar0415\obj\Debug\CustCar0415.UI.DealView.resources

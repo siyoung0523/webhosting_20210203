@@ -101,6 +101,16 @@ namespace CustCar0415.Control
             }
         }
 
+        public void removeAll()
+        {
+            if(listUn.Count ==0)
+            {
+                Console.WriteLine("거래 데이터가 존재하지 않습니다.");
+                return;
+            }
+            listUn.Clear();
+        }
+
     }
 }
 
