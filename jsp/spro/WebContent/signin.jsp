@@ -5,41 +5,38 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type = "text/css">
-	.container{
-		width : 800px;
-		height : 500px;
-		margin : 0 auto;
-		background-color: #c8c8c8;
-		padding : 150px 100px;  <%-- 테이블 여백 아래위 150px, 좌우 100px --%>
-		box-sizing : border-box; 
-		}
-</style>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+
 <body>
-	<div class="container">
-		<form action="signproc.jsp" method="get">
+	<%-- 부트스트랩 --%>
+	<div class="jumbotron">
+  		<h1>My Study</h1>
+ 		<p>공부할려면 회원가입</p> 
+ 		<form action="signproc.jsp" method="get">
+			<div class = "form-group">
+				<label for ="id">아이디</label>
+				<input type ="text" name="id" id="id" class="form-control"/>
+			</div>
 <!-- submit을 누르면 signproc.jsp로 아래의 값들을 다 들고 이동 -->
 <!-- get방식은 주소값에 가지고 간 값들을 보여줌, post방식은 주소값에 값들 안보여줌 -->
-			<table>
-				<tr>
-					<td>아이디</td>
-					<td><input type="text" name="id"/></td>
-				</tr>
-				<tr>
-					<td>비밀번호</td>
-					<td><input type="text" name="pw"/></td>
-				</tr>
-				<tr>
-					<td>이름</td>
-					<td><input type="text" name="name"/></td>
-				</tr>
-				<tr>
-					<td>전화번호</td>
-					<td><input type="text" name="phone"/></td>
-				</tr>
-			</table>
-			<input type="submit" value="회원가입"/>
+			<div class = "form-group">
+				<label for = "pw">비밀번호</label>
+				<input type = "password" name="pw" id="pw" class="form-control"/>
+			</div>
+			<div class = "form-group">
+				<label for = "name">이름</label>
+				<input type = "text" name="name" id="name" class="form-control"/>
+			</div>
+			<div class = "form-group">
+				<label for = "phone">전화번호</label>
+				<input type = "text" name="phone" id="phone"class="form-control"/>
+			</div>
+				
+			<input type="submit" value="회원가입" class="btn btn-primary"/>
 		</form>
 	</div>
 </body>

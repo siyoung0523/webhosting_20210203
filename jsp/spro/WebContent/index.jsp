@@ -5,16 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<style type = "text/css">
-	.container{
-		width : 800px;
-		height : 500px;
-		margin : 0 auto;
-		background-color: #c8c8c8;
-		padding : 150px 100px;  <%-- 테이블 여백 아래위 150px, 좌우 100px --%>
-		box-sizing : border-box; 
-		}
-</style>
+
 <script type ="text/javascript">
 	window.onload = function(){
 		document.getElementById('idsearch').onclick=function(){
@@ -36,26 +27,57 @@
 		}
 	}
 </script>
+<%-- 부트스트랩을 이용할 수 있게 하는 코드 --%>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<div class ="container">
-		<table>
-			<tr>
-				<td>아이디</td>
-				<th><input type ="text" name ="id" id="id"/></th>
-				<th rowspan="2"><input type="button" value="로그인" id="login"></th>
-			</tr>
-			<tr>
-				<td>비밀번호</td>
-				<th><input type="text" name = "pw" id="pw"/></th>
-				
-			</tr>
-			<tr>
-				<td><input type="button" value="ID찾기" id="idsearch"></td>
-				<td><input type="button" value="회원가입" id="signin"></td>
-				<td><input type="button" value="퇴실" id="outroom"></td>
-			</tr>
-		</table>
+	<%-- 부트스트랩 --%>
+	<div class="jumbotron">
+  		<h1>My Study Cafe System</h1>
+ 		<p>Study Hard!</p> 
+ 		<form action="/action_page.php">
+	  <div class="form-group">
+	    <label for="email">Name:</label>
+	    <input type="text" class="form-control" placeholder="Enter email" id="id">
+	  </div>
+	  <div class="form-group">
+	    <label for="pwd">Password:</label>
+	    <input type="password" class="form-control" placeholder="Enter password" id="pw">
+	  </div>
+	  <div class="form-group form-check">
+	    <label class="form-check-label">
+	      <input class="form-check-input" type="checkbox"> Remember me
+	    </label>
+	  </div>
+	<div class="row">
+		<input type="button" value="ID찾기" id="idsearch" class="btn btn-primary ml-2 mr-2">
+		<input type="button" value="로그인" id="login" class="btn btn-primary mr-2">
+		<input type="button" value="회원가입" id="signin"class="btn btn-primary mr-2">
+		<input type="button" value="퇴실" id="outroom"class="btn btn-primary mr-2">
 	</div>
+</form>
+	<%-- 부트스트랩 --%>
+	<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <h3>Column 1</h3>
+      <p>첫번째 컬럼 문단</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 2</h3>
+      <p>첫번째 컬럼 문단</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+    <div class="col-sm-4">
+      <h3>Column 3</h3>        
+      <p>첫번째 컬럼 문단</p>
+      <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+    </div>
+  </div>
+</div>
 </body>
 </html>
