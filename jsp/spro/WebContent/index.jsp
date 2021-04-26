@@ -12,8 +12,8 @@
 			location.href = 'idsearch.jsp'; //버튼 누르면 idsearch.jsp로 이동
 		}
 		document.getElementById('login').onclick=function(){
-	//		var id = document.getElementById('id');
-	//		var pw = document.getElementById('pw');
+ 			var id = document.getElementById('id');
+			var pw = document.getElementById('pw'); 
 	//		alert('id='+id.value);
 	//		alert('pw='+pw.value);
 			location.href = 'login.jsp?id='+id.value+'&pw='+pw.value; 
@@ -32,6 +32,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/mycss.css"/)>
+<!-- 쿼리문 -->  
+<script type="text/javascript">
+  	$('document').ready(function(){
+		$('#seatsel').on('click', function(){
+			location.href='seatsel.jsp';
+		})
+	 })
+	  </script>
 </head>
 <body>
 	<%-- 부트스트랩 --%>
@@ -56,6 +65,8 @@
 		<input type="button" value="ID찾기" id="idsearch" class="btn btn-primary ml-2 mr-2">
 		<input type="button" value="로그인" id="login" class="btn btn-primary mr-2">
 		<input type="button" value="회원가입" id="signin"class="btn btn-primary mr-2">
+		<input type="button" value="죄석선택" id="seatsel"class="btn btn-primary mr-2">
+		<input type="button" value="시간충전" id="timecharge"class="btn btn-primary mr-2">
 		<input type="button" value="퇴실" id="outroom"class="btn btn-primary mr-2">
 	</div>
 </form>

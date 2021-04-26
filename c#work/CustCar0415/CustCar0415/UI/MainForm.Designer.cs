@@ -30,7 +30,6 @@ namespace CustCar0415
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWin));
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.mainExit = new Sunny.UI.UISymbolButton();
             this.help = new Sunny.UI.UISymbolButton();
             this.randInsert = new CxFlatUI.CxFlatRoundButton();
@@ -40,19 +39,9 @@ namespace CustCar0415
             this.dataView = new CxFlatUI.CxFlatRoundButton();
             this.randDel = new CxFlatUI.CxFlatRoundButton();
             this.mainTitle = new Sunny.UI.UISymbolLabel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(2, 67);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(391, 382);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // mainExit
             // 
@@ -138,6 +127,7 @@ namespace CustCar0415
             this.dataInsert.TabIndex = 13;
             this.dataInsert.Text = "데이터 추가";
             this.dataInsert.TextColor = System.Drawing.Color.Transparent;
+            this.dataInsert.Click += new System.EventHandler(this.dataInsert_Click);
             // 
             // dataView
             // 
@@ -157,6 +147,7 @@ namespace CustCar0415
             this.randDel.BackColor = System.Drawing.Color.Transparent;
             this.randDel.ButtonType = CxFlatUI.ButtonType.Primary;
             this.randDel.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.randDel.ForeColor = System.Drawing.Color.Black;
             this.randDel.Location = new System.Drawing.Point(486, 149);
             this.randDel.Name = "randDel";
             this.randDel.Size = new System.Drawing.Size(250, 46);
@@ -180,6 +171,17 @@ namespace CustCar0415
             this.mainTitle.SymbolColor = System.Drawing.Color.SeaShell;
             this.mainTitle.TabIndex = 10;
             this.mainTitle.Text = "고객차량관리앱 v1.1";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(2, 67);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(391, 382);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // MainWin
             // 

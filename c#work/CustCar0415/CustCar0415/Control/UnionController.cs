@@ -1,4 +1,5 @@
-﻿using CustCar0415.Model;
+﻿using CustCar0415.Common;
+using CustCar0415.Model;
 using CustCar0415.Utill;
 using System;
 using System.Collections.Generic;
@@ -8,25 +9,26 @@ using System.Threading.Tasks;
 
 namespace CustCar0415.Control
 {
-    class UnionController
+    class UnionController : BaseController
     {
-        CarContoller carHandle;
+        CarController carHandle;
         CustController custHandle;
         SellController sellHandle;
-        List<Deal<Car, Customer, Seller>> listUn = new List<Deal<Car, Customer, Seller>>();
-        RandData rand;
+        List<Deal<Car, Customer, Seller>> listUn;
 
         //생성자 오버로딩
         public UnionController(RandData rand)
         {
             this.rand = rand;
-            carHandle = new CarContoller(rand);
+            carHandle = new CarController(rand);
             custHandle = new CustController(rand);
             sellHandle = new SellController(rand);
+            listItem = new List<object>();
+            listUn = listItem.Cast<Deal<Car, Customer, Seller>>().ToList();
         }
 
         //생성자 오버로딩
-        public UnionController(CarContoller carHandle, CustController custHandle, SellController sellHandle)
+        public UnionController(CarController carHandle, CustController custHandle, SellController sellHandle)
         {
             this.carHandle = carHandle;
             this.custHandle = custHandle;
@@ -34,17 +36,29 @@ namespace CustCar0415.Control
         }
 
         //internal은 java의 default와 비슷함. 여기서 패키지 내에선 public 같이 하고, 패키지에서 나오면 private같이 함.
-        internal CarContoller CarHandle { get => carHandle; set => carHandle = value; }
+        internal CarController CarHandle { get => carHandle; set => carHandle = value; }
         internal CustController CustHandle { get => custHandle; set => custHandle = value; }
         internal SellController SellHandle { get => sellHandle; set => sellHandle = value; }
+        internal List<Deal<Car, Customer, Seller>> ListUn { get => listUn; set => listUn = value; }
 
-        public void addItem(Deal<Car, Customer, Seller> deal)
+
+        public void ItemViewAll()
         {
-            listUn.Add(deal);
+            if (listUn.Count == 0)
+            {
+                Console.WriteLine("거래 데이터가 존재하지 않습니다.");
+                return;
+            }
+
+            for (int i = 0; i < listUn.Count; i++)
+            {
+                Console.WriteLine("번호: " + (i + 1));
+                Console.WriteLine(listUn[i].ToString());     // list[i].printInfoCar(); 이 둘 중 아무거나 쓰면 됨.
+                Console.WriteLine("------------------");
+            }
         }
 
-
-        public void insRandData(int count)
+        public override void insRandData(int count)
         {
             for (int i = 0; i < count; i++)
             {
@@ -68,24 +82,8 @@ namespace CustCar0415.Control
                         rand.getPrice() + "+500만원"));
             }
         }
-        public void dealViewAll()
-        {
-            if (listUn.Count == 0)
-            {
-                Console.WriteLine("거래 데이터가 존재하지 않습니다.");
-                return;
-            }
 
-            for (int i = 0; i < listUn.Count; i++)
-            {
-                Console.WriteLine("번호: " + (i + 1));
-                Console.WriteLine(listUn[i].ToString());     // list[i].printInfoCar(); 이 둘 중 아무거나 쓰면 됨.
-                Console.WriteLine("------------------");
-            }
-        }
-
-
-        public void dealView()
+        public override void itemView()
         {
             if (listUn.Count == 0)
             {
@@ -101,9 +99,9 @@ namespace CustCar0415.Control
             }
         }
 
-        public void removeAll()
+        public override void removeAll()
         {
-            if(listUn.Count ==0)
+            if (listUn.Count == 0)
             {
                 Console.WriteLine("거래 데이터가 존재하지 않습니다.");
                 return;
@@ -111,6 +109,20 @@ namespace CustCar0415.Control
             listUn.Clear();
         }
 
+        public override void addItem(object item)
+        {
+            listUn.Add(item as Deal<Car, Customer, Seller>);
+        }
+
+        public override void delItem(string item)
+        {
+            throw new NotImplementedException();
+        }
+
+        public override void updateItem(string[] item)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
 

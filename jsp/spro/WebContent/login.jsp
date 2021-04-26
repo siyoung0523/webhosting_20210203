@@ -1,3 +1,4 @@
+<%@page import="spro.com.org.SPRO_MEMBER"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="spro.com.org.SPRO_DBManager" %>
 <!DOCTYPE html>
@@ -8,6 +9,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="css/mycss.css"/)>
+  
 </head>
 <body>
 	<div class="jumbotron">
@@ -23,9 +26,16 @@
 	out.print("안녕하세요");
 	
 	SPRO_DBManager sdbm = new SPRO_DBManager();
-	 int ret = sdbm.ckLogin(id,pw);
-	 if(ret == 0){
-		 out.print("로긴성공");
+	SPRO_MEMBER ret = sdbm.ckLogin(id,pw);
+	if(ret != null){
+		 out.print("로그인성공");
+		 
+		 session.setAttribute("id",id);
+		 session.setAttribute("pw",pw);
+		 session.setAttribute("name",ret.getName());
+		 session.setAttribute("phone",ret.getPhone());
+		 out.println("세션에 저장 성공했음");
+		 out.print("<a href='index.jsp' class='btn btn-primary'>메인페이지</a>");
 	 }
 	 else{
 		 out.print("로그인실패");

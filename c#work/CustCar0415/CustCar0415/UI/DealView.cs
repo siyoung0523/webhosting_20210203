@@ -1,4 +1,7 @@
-﻿using MaterialSkin.Controls;
+﻿using CustCar0415.Common;
+using CustCar0415.Control;
+using CustCar0415.Model;
+using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -11,23 +14,35 @@ using System.Windows.Forms;
 namespace CustCar0415.UI
 {
 
-    public partial class DealView : MaterialForm
+    partial class DealView : MaterialForm
     {
-
+        UnionController uHandler;
         public DealView()
         {
             InitializeComponent();
         }
 
+        public DealView(UnionController uHandler) // 랜덤 생성한 데이터가 uHandler안에 들어가 있음.
+        {                                         // 이걸 dealView에 뿌려줌
+            InitializeComponent();
+            this.uHandler = uHandler; // this.uHandler안엔 mainform안에서 만들어진 객체정보가 들어감.
+        }
+
         private void initDealListView()
         {
-            string[] data = { "1", "그랜저", "4천만원", "홍길동", "전우치", "2021년 4월 16일", "3천8백만원" };
-            dealSmListview.Items.Add(new ListViewItem(data));
-            for (int i = 0; i < 50; i++)
+            List<Deal<Car, Customer, Seller>> list = uHandler.ListUn;
+           
+            for (int i = 0; i < list.Count; i++)
             {
                 dealSmListview.Items.Add(new ListViewItem(new String[]
                 {
-                    (i+2).ToString(), "그랜저", "4천만원", "홍길동", "전우치", "2021년 4월 16일", "3천8백만원"
+                    (i+1).ToString(), 
+                    list[i].Car.Model, 
+                    list[i].Car.Price, 
+                    list[i].Customer.Name, 
+                    list[i].Seller.Name, 
+                    list[i].Date, 
+                    list[i].Price
                 }
                 ));
             }
@@ -37,6 +52,7 @@ namespace CustCar0415.UI
             dealSmListview.Items[index].Selected = true; // 선택하게 함.
             dealSmListview.Items[index].Focused = true; // 점선으로 선택함 [커서 반짝과 비슷함]
             dealSmListview.EnsureVisible(index); // 이동하게 함.
+            CommMenu.colorListViewHeader(ref dealSmListview, Color.DarkCyan, Color.White); // <--- 추가, ref는 '포인터'개념
         }
     
         
@@ -54,9 +70,9 @@ namespace CustCar0415.UI
 
         private void setRowColor(Color color1, Color color2)
         {
-            foreach(ListViewItem item in dealSmListview.Items)
+            foreach (ListViewItem item in dealSmListview.Items)
             {
-                if((item.Index % 2) == 0)
+                if ((item.Index % 2) == 0)
                 {
                     item.BackColor = color1; // 짝수라인 색깔 지정
                 }
@@ -66,5 +82,6 @@ namespace CustCar0415.UI
                 }
             }
         }
+
     }
 }
