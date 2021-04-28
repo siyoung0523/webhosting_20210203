@@ -7,16 +7,16 @@
 <title>Insert title here</title>
 
 <script type ="text/javascript">
-	window.onload = function(){
+	window.onload = function(){ // .onload : 이 함수의 내용을 실행하라는 뜻
 		document.getElementById('idsearch').onclick=function(){
 			location.href = 'idsearch.jsp'; //버튼 누르면 idsearch.jsp로 이동
 		}
 		document.getElementById('login').onclick=function(){
- 			var id = document.getElementById('id');
-			var pw = document.getElementById('pw'); 
+ 			var id = document.getElementById('id'); //  id라는 태그가 있으면 찾아서 var id 에 넣어달라
+			var pw = document.getElementById('pw'); // pw라는 태그가 있으면 찾아서 var pw 에 넣어달라
 	//		alert('id='+id.value);
 	//		alert('pw='+pw.value);
-			location.href = 'login.jsp?id='+id.value+'&pw='+pw.value; 
+			location.href = 'login.jsp?id='+id.value+'&pw='+pw.value;
 			//버튼 누르면 login.jsp로 이동, 이때 id와 pw를 가지고 이동해야함.
 		}
 		document.getElementById('signin').onclick=function(){
