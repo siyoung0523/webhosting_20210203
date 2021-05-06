@@ -101,10 +101,10 @@ dataTxt <- data.frame(ID = id, NAME = name)
 write.table(dataTxt, file='res/data_ex_sav.txt')
 
 titanic <- read.csv('https://vincentarelbundock.github.io/Rdatasets/csv/COUNT/titanic.csv')
-titanic
+titanic #titanic.csv 파일을 인터넷으로 부터 가져옴
 
-dim(titanic)
-str(titanic)
+dim(titanic) # 행 열 갯수
+str(titanic) # 열 별 속성
 
 table(titanic$age)
 table(titanic$sex)
@@ -146,6 +146,41 @@ write_xlsx(x=titanicDf,
 # 1. 동전 앞면과 뒷면에 대한 확률 분포 함수 구현
 # 랜덤 생성 : runif() -> runif(5, min=Φ, max=1)
 
+runif(5, min = 0, max = 1)
+#선생님이 한 것
+coinTest <- function(n){
+  r <- runif(n, min=0, max=1)
+  res <- c() #벡터 생성
+  for(i in 1:n){
+    if(r[i] <= 0.5){
+      res[i] <- 0
+    }
+    else {
+      res[i] <-1
+    }
+  }
+  return(res)
+}
+
+res <- coinTest(5)
+res
+hist(res) # 정확한 수량을 가리키는게 아니라 분포임.
+
+monteTest <- function(n){
+  cnt <- 0
+  for ( i in 1:n){
+    cnt <- cnt + coinTest(1)
+  }
+  result <- cnt / n
+  return(result)
+}
+#앞면 나오면 1이 나오는 횟수 / 전체 시도한 횟수
+monteTest(2) # 2번 했을 때 앞이 나올 확률
+monteTest(10000)
+monteTest(1000000)
+  
+
+#내가 한 것
 coinTest <- function(c){
   x <- 0
   while ( x < c){
