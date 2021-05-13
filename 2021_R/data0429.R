@@ -146,7 +146,6 @@ write_xlsx(x=titanicDf,
 # 1. 동전 앞면과 뒷면에 대한 확률 분포 함수 구현
 # 랜덤 생성 : runif() -> runif(5, min=Φ, max=1)
 
-runif(5, min = 0, max = 1)
 #선생님이 한 것
 coinTest <- function(n){
   r <- runif(n, min=0, max=1)

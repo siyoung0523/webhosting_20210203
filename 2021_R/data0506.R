@@ -7,13 +7,11 @@ ls(exdata1) #list
 
 library('dplyr') #테이블을 쉽게 수정할 수 있는 라이브러리
 exdata1 <- rename(exdata1, Y17_AMT=AMT17, Y16_AMT=AMT16)
-#Y17_AMT 를 AMT로 바꿈, 여기 메모리상에서만 바뀌고 엑셀은 안바뀜;
+#Y17_AMT 를 AMT17로 바꿈, 여기 메모리상에서만 바뀌고 엑셀은 안바뀜;
 View(exdata1)
 
 exdata1$AMT_NEW <- exdata1$Y17_AMT + exdata1$Y16_AMT #새로운 변수 AMT_NEW를 만듦
 exdata1$CNT_NEW <- exdata1$Y17_CNT + exdata1$Y16_CNT #새로운 변수 CNT_NEW를 만듦
-View(exdata1)
-
 exdata1$AVG_AMT <- exdata1$AMT_NEW / exdata1$CNT_NEW #평균값을 구함
 View(exdata1)
 
@@ -82,8 +80,6 @@ View(bind_col_full)
 
 
 x1 <- c(1, 2, 3, 4, 5, 6, 100)
-avg <- x1/7
-avg
 # 평균을 구하는 함수
 mean(x1) 
 
@@ -164,24 +160,100 @@ kurtosis(x)
 # '-'값이면 왼쪽으로 꼬리가 긴 형태.
 skewness(x)
 
-library(reshape2)
-airquality# 'airquality'는 R안에 내장된 정보
+library(reshape2) #열의 정보들을 행으로 맞추는 라이브러리
+View(airquality)# 'airquality'는 R안에 내장된 정보
 head(airquality) 
-#names(airquality) <- tolower(names(airquality)
-#melt_test <- melt(airquality)
-#head(melt_test)
+names(airquality) <- tolower(names(airquality)) #열을 소문자로 바꿈.
+View(airquality)
+melt_test <- melt(airquality)
+head(melt_test)
 str(airquality)
-
 #melt - 열의 정보를 보기 편하게 가공
 melt_test2 <- melt(airquality,
-                   id.vars = c('Month', 'Wind'), #id.vars는 기준열
-                   measure.vars ='Ozone') #measute.vars는 변환열
-#month와 wind를 기준으로 놓고, Ozone값 출력
+                   id.vars = c('month', 'wind'), #id.vars는 기준열
+                   measure.vars ='ozone') #measute.vars는 변환열
+#month와 wind를 기준으로 놓고, Ozone값 출력 [열의 정보를 행으로]
 melt_test2
 
 melt_test3 <- melt(airquality,
-                   id.vars = c("Month","Day"),
+                   id.vars = c("month","day"),
                    variable.name = "climate_variable",
                    value.name = "climate_value")
+melt_test3
+tail(melt_test3)
 
-head(melt_test3)
+# acast() : vector, matrix, array 변환
+# dcast() : data frame 변환
+aq_melt <- melt(airquality, id=c("month","day"), na.rm=T)
+aq_melt
+class(aq_melt)
+
+aq_dcast <- dcast(aq_melt, month + day ~variable)
+class(aq_dcast)
+head(aq_dcast)
+
+acast(aq_melt, day ~ month ~ variable)#행day, 열month, 값 성분(오존,태양,온도)
+#기준열 ~ 변환열 ~ 분리 기준열열
+acast(aq_melt, month ~ day, mean)
+dcast(aq_melt, month ~ day, mean)
+
+############################################
+library(dplyr) #테이블을 쉽게 수정할 수 있는 라이브러리
+library(reshape2) #열의 정보들을 행으로 맞추는 라이브러리
+
+# 1. ozone 합, 평균값, 표준편차, 분산 구하기 [조건 : NA제거]
+names(airquality) <- tolower(names(airquality))
+str(airquality)
+sum(airquality$ozone, na.rm=T) #합
+mean(airquality$ozone, na.rm=T) #평균값
+sd(airquality$ozone, na.rm=T) #표준편차
+var(airquality$ozone, na.rm=T) #분산
+
+# 2. 모든 NA 제거 후, 각 월별로 측정값들의 평균
+melt_data <- melt(airquality, id=c('month','day'), na.rm = T)
+View(melt_data)
+cast_data <- acast(melt_data, month~variable, mean)
+View(cast_data)
+
+# 3. 5월달 평균 온도, 풍속
+
+# 4. ozone 5월달 합, 평균, 분산, 표준편차 [ 조건 : NA제거, R기본함수와 사용자 정의 합수 사용]
+ozone5 <- subset(airquality, month==5, select=ozone)
+class(ozone5) #데이터 프레임
+ozone5$ozone
+class(ozone5$ozone) # 벡터
+mean(ozone5$ozone, na.rm=T)
+
+library(dplyr)
+# 평균 구하는 방법 1. [공부 하기엔 이걸로 생각하는게 더 나음]
+fil_data <- filter(airquality, airquality$month==5)
+fil_data
+sel_data <- select(fil_data, ozone) #여기서 오존만 필요하므로 select사용[select안엔 데이터 프레임 들어감]
+sel_data
+mean(sel_data$ozone, na.rm = T) #mean엔 벡터값이 들어가야함.
+
+# 평균 구하는 방법 2. %>%로 이어짐.
+airquality %>% filter(month==5) %>% select(ozone) %>% summarise(ozone5_avg=mean(ozone, na.rm=T))
+
+
+delNa = ifelse(!is.na(ozone5$ozone), ozone5$ozone, round(mean(ozone5$ozone, na.rm=T), 1))
+delNa
+mean(delNa)
+
+# 5. 5월 7일 데이터 출력
+str(airquality)
+airquality[airquality$Month==5 & airquality$Day==7,]
+
+
+# 6. 5월 1일 ~ 5월 6일 까지 오존농도 출력
+
+# 7. 기온이 가장 높은 날짜를 기준으로 출력
+airquality[which.max(airquality$temp), c('month','day')]
+
+# 8. 기온이 가장 높은 날의 모든 데이터 출력
+
+# 9. 6월달에 발생한 가장 강한 바람의 세기 출력 [subset()]
+wind6 <- subset(airquality, month==6, select = wind)
+wind6 # class가 data.frame임
+wind6$wind # class가 numeric임
+wind6[which.max(wind6$wind), ]

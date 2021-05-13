@@ -20,6 +20,7 @@
 		document.getElementById('outroom').onclick=function(){
 			location.href = 'outroom.jsp';
 		}
+
 	}
 </script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -35,11 +36,15 @@
 		$('#loginout').on('click',function(){
 			location.href='logout.jsp';
 		})
+		$('#chart').on('click', function(){location.href='dg/dgmain.jsp'}); /*dg폴더 안에 dgmain.jsp  */
 	})
 </script>
 </head>
 <body>
 	<div class="jumbotron">
+		<div class="row">
+			<input class="btn btn-primary ml-2 mb-2" type="button" id="chart" value="차트"/> <!-- ml-2 [margin left 2, margin bottom 2]  -->
+		</div>
 		<h1>MY STUDY</h1>
 		<p>공부하자</p> 
 		<% 
