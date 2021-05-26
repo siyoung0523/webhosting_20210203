@@ -108,12 +108,11 @@ scatterplot3d(trees, type='h', highlight.3d = T,
 
 #원형그래프
 exdata <- c(18, 12, 4, 16, 8, 9, 12)
-View(volcano)
 lab <- c('미국', '영국', '호주', '독일','캐나다','인도','한국')
 library(plotrix)
 pie3D(exdata, labels =exdata, explode = 0.05, cex=0.5,
       main='3D Pie 차트') #explode:영역별 간격
-legend('topright', legend = lab, cex=0.9, fill=rainbow(length(exdata)))
+legend('topright', legend = lab, cex=0.5, fill=rainbow(length(exdata)))
 
 #화산자료 투시도
 library(lattice)
@@ -127,7 +126,7 @@ wireframe(volcano, shade=T, aspect=c(10, 10),
 # ggplot2 라이브러리
 library(ggplot2)
 str(airquality)
-View(airquality)
+names(airquality) <- tolower(names(airquality))
 ggplot(airquality, aes(x=day, y=temp)) #x축 day, y축 temp
 
 #산점도
